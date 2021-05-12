@@ -1,6 +1,7 @@
 <?php
 
-require('connexion.php');
+require "connexion.php";
+require "recover.php";
 
 $stmt = $connexion->prepare("SELECT titreArticle, dateCreationArticle, statutArticle, nomCategorie, nomTag
 FROM article
@@ -48,13 +49,14 @@ $articles = $stmt->fetchAll();
                             <th>Statut</th>
                             <th>Catégorie</th>
                             <th>Tags</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($articles as $article) { ?>
                             <tr>
                                 <td><?= $article["titreArticle"] ?></td>
-                                <td><?= $article["dateCreationArticle"] ?></td>
+                                <td><?= afficheDateFR($article["dateCreationArticle"]) ?></td>
                                 <td><?= $article["statutArticle"] ?></td>
                                 <td><?= $article["nomCategorie"] ?></td>
                                 <td><?= $article["nomTag"] ?></td>
@@ -98,12 +100,20 @@ $articles = $stmt->fetchAll();
                         <div>
                             <select class="form-check-label" for="invalidCheck">
                                 <option value="">Choisir...</option>
+                                <option>Cake</option>
+                                <option>Donuts</option>
+                                <option>Macarons</option>
+                                <option>Beu</option>
                             </select>
                         </div>
                         <h3>Par tag</h3>
                         <div>
                             <select class="form-check-label" for="invalidCheck">
                                 <option value="">Choisir...</option>
+                                <option>Baba</option>
+                                <option>Ooh</option>
+                                <option>Rhum</option>
+                                <option>Labone</option>
                             </select>
                         </div>
                     </div>

@@ -16,7 +16,7 @@ function redirectTo($url)
     die();
 }
 
-// function afficheDateFR($dateStringUS)
-// {
-//     return date_format(date_create($dateStringUS), "d/m/Y");
-// }
+function afficheDateFR($dateStringUS)
+{
+    return date_format(date_create($dateStringUS), "d/m/Y");
+}
