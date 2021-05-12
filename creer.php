@@ -1,16 +1,12 @@
 <?php
 
 require('connexion.php');
-
-function validPOST($inputName)
-{
-    return isset($_POST[$inputName]) && !empty($_POST[$inputName]);
-}
+require('recover.php');
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (validPOST("titreArticle")) {
         $sql = "INSERT INTO `article`
-        (titreArticle, dateCreationArticle, statutArticle, idCategorie)
+        (titreArticle, dateCreationArticle, statutArticle, nomCategorie)
         VALUES (:titreArticle, CURDATE(), :statutArticle, `area`,
         (SELECT idCategorie, FROM categorie WHERE nomCategorie = :nomCategorie))";
 
@@ -20,6 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             "statutArticle" => htmlspecialchars($_POST["statutArticle"]),
             ":nomCategorie" => htmlspecialchars($_POST["nomCategorie"])
         ]);
+        if ($res === true) {
+            redirectTo("index.php");
+        }
     }
 }
 
