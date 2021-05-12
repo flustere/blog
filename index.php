@@ -1,6 +1,6 @@
 <?php
 
-include('connexion.php');
+require('connexion.php');
 
 $stmt = $connexion->prepare("SELECT titreArticle, dateCreationArticle, statutArticle, nomCategorie, nomTag
 FROM article
@@ -32,7 +32,7 @@ $articles = $stmt->fetchAll();
 <body>
     <div class="container d-flex">
 
-        <div class="container px-5 gx-5">
+        <div class="container" style="max-width: 800px;">
             <div class="container d-flex justify-content-between">
                 <h1>Liste d'articles</h1>
                 <form method="POST" action="creer.php">
@@ -65,10 +65,10 @@ $articles = $stmt->fetchAll();
             </div>
         </div>
 
-        <div class="container px-5 gx-5">
-            <table class="table table-bordered">
+        <div class="container" style="max-width:200px; margin-top: 60px">
+            <table class=" table table-bordered">
                 <div class="container border">
-                    <h3>Filter</h3>
+                    <h4>Filter</h4>
                     <div class="col-12">
                         <div>
                             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
@@ -93,7 +93,7 @@ $articles = $stmt->fetchAll();
 
             <table>
                 <div class="container border">
-                    <h3>Par catégorie</h3>
+                    <h4>Par catégorie</h4>
                     <div class="col-12">
                         <div>
                             <select class="form-check-label" for="invalidCheck">
