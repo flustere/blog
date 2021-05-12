@@ -30,7 +30,7 @@ $articles = $stmt->fetchAll();
 </head>
 
 <body>
-    <div class="container">
+    <div class="container d-flex">
 
         <div class="container px-5 gx-5">
             <div class="container d-flex justify-content-between">
@@ -65,7 +65,7 @@ $articles = $stmt->fetchAll();
             </div>
         </div>
 
-        <div class="container">
+        <div class="container px-5 gx-5">
             <table class="table table-bordered">
                 <div class="container border">
                     <h3>Filter</h3>
