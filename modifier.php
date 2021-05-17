@@ -38,7 +38,7 @@ if (isset($_GET['id'])) {
 //     if (isset($_POST["delete"])) {
 //         // Check the CSRF token
 //         if (validPOST("token") && hash_equals($token, $_POST['token'])) {
-//             $stmt = $db->prepare("DELETE FROM blog WHERE id=?");
+//             $stmt = $connexion->prepare("DELETE FROM blog WHERE id=?");
 //             if ($stmt->execute([$id])) {
 //                 redirectTo("index.php");
 //             } else {

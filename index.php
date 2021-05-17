@@ -103,7 +103,7 @@ $articles = $stmt->fetchAll();
                                 <option>Cake</option>
                                 <option>Donuts</option>
                                 <option>Macarons</option>
-                                <option>Beu</option>
+                                <option>Pancake</option>
                             </select>
                         </div>
                         <h3>Par tag</h3>
@@ -113,7 +113,7 @@ $articles = $stmt->fetchAll();
                                 <option>Baba</option>
                                 <option>Ooh</option>
                                 <option>Rhum</option>
-                                <option>Labone</option>
+                                <option>Boubou</option>
                             </select>
                         </div>
                     </div>
