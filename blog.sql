@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 10 mai 2021 à 14:22
+-- Généré le : mar. 18 mai 2021 à 18:17
 -- Version du serveur :  8.0.24
 -- Version de PHP : 8.0.5
 
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   `idCategorie` int DEFAULT NULL,
   PRIMARY KEY (`idArticle`),
   KEY `ARTICLE_CATEGORIE_FK` (`idCategorie`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `article`
@@ -68,7 +68,8 @@ CREATE TABLE IF NOT EXISTS `article` (
 
 INSERT INTO `article` (`idArticle`, `titreArticle`, `dateCreationArticle`, `datePublicationArticle`, `statutArticle`, `contenuArticle`, `idCategorie`) VALUES
 (1, 'muffins', '2021-04-01', '2021-05-10', 'Brouillon', '', 1),
-(2, 'muffins', '2021-04-01', '2021-05-10', 'Brouillon', '', 1);
+(2, 'muffins', '2021-04-01', '2021-05-10', 'Brouillon', '', 1),
+(3, 'Pancake', '2021-05-18', '0000-00-00', 'Brouillon', '', 1);
 
 -- --------------------------------------------------------
 
@@ -82,14 +83,17 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   `nomCategorie` varchar(255) NOT NULL,
   `descriptionCategorie` text NOT NULL,
   PRIMARY KEY (`idCategorie`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `categorie`
 --
 
 INSERT INTO `categorie` (`idCategorie`, `nomCategorie`, `descriptionCategorie`) VALUES
-(1, 'cake', '');
+(1, 'cake', ''),
+(2, 'Donuts', ''),
+(3, 'Macarons', ''),
+(4, 'Pancake', '');
 
 -- --------------------------------------------------------
 
@@ -103,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `tag` (
   `nomTag` varchar(255) NOT NULL,
   `descriptionTag` text NOT NULL,
   PRIMARY KEY (`idTag`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `tag`
@@ -111,7 +115,10 @@ CREATE TABLE IF NOT EXISTS `tag` (
 
 INSERT INTO `tag` (`idTag`, `nomTag`, `descriptionTag`) VALUES
 (1, 'Boubou', ''),
-(2, 'Boubou', '');
+(2, 'Boubou', ''),
+(3, 'Baba', ''),
+(4, 'Ooh', ''),
+(5, 'Rhum', '');
 
 --
 -- Contraintes pour les tables déchargées
